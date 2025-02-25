@@ -82,12 +82,13 @@ namespace Wk6Ex2
                 Console.Write("Enter your choice: ");
                 string choice = Console.ReadLine();
 
+                // switch case to choose the shape
                 switch (choice)
                 {
                     case "1":
                         Console.Write("Enter radius of the circle: ");
-                        double radius = Convert.ToDouble(Console.ReadLine());
-                        shapes.Add(new Shape.Circle(radius));
+                        double radius = Convert.ToDouble(Console.ReadLine()); // collect the radius of the circle
+                        shapes.Add(new Shape.Circle(radius)); // add the circle to the list
                         Console.WriteLine("Circle added! \n");
                         break;
 
@@ -96,7 +97,7 @@ namespace Wk6Ex2
                         double length = Convert.ToDouble(Console.ReadLine());
                         Console.Write("Enter width of the rectangle: ");
                         double width = Convert.ToDouble(Console.ReadLine());
-                        shapes.Add(new Shape.Rectangle(length, width));
+                        shapes.Add(new Shape.Rectangle(length, width)); // add the rectangle to the list
                         Console.WriteLine("Rectangle added! \n");
                         break;
 
@@ -105,20 +106,20 @@ namespace Wk6Ex2
                         double baseLength = Convert.ToDouble(Console.ReadLine());
                         Console.Write("Enter height of the triangle: ");
                         double height = Convert.ToDouble(Console.ReadLine());
-                        shapes.Add(new Shape.Triangle(baseLength, height));
+                        shapes.Add(new Shape.Triangle(baseLength, height)); // add the triangle to the list
                         Console.WriteLine("Triangle added! \n");
                         break;
 
                     case "4":
-                        Console.WriteLine("\nShape Areas:");
+                        Console.WriteLine("\nShape Areas:"); // display the areas of all the shapes
                         foreach (var shape in shapes)
                         {
-                            if (shape is Shape.Circle circle)
-                                Console.WriteLine($"Circle Area: {circle.CalculateArea()}");
-                            else if (shape is Shape.Rectangle rectangle)
-                                Console.WriteLine($"Rectangle Area: {rectangle.CalculateArea()}");
-                            else if (shape is Shape.Triangle triangle)
-                                Console.WriteLine($"Triangle Area: {triangle.CalculateArea()}");
+                            if (shape is Shape.Circle circle) // check if the shape is a circle
+                                Console.WriteLine($"Circle Area: {circle.CalculateArea()}"); // display the area of the circle
+                            else if (shape is Shape.Rectangle rectangle) // check if the shape is a rectangle
+                                Console.WriteLine($"Rectangle Area: {rectangle.CalculateArea()}");  // display the area of the rectangle
+                            else if (shape is Shape.Triangle triangle) // check if the shape is a triangle
+                                Console.WriteLine($"Triangle Area: {triangle.CalculateArea()}"); // display the area of the triangle
                         }
                         break;
 
